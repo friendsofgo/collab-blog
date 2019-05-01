@@ -11,6 +11,8 @@ Hay unas normas básicas que seguir para escribir un artículo en **Friends of G
 * Tratar sobre temas concisos, y con buena representación práctica e intentemos evitar los dogmas.
 * No faltar el respeto, no todos tienen el mismo nivel y no por saber más somos mejores.
 
+Además de esto se debe de cumplir con el [Código de Conducta](https://github.com/friendsofgo/collab-blog/blob/master/CODE_OF_CONDUCT.md)
+
 ## ¿Cómo se escribe un artículo?
 
 Todos los artículos deben ser escritos utilizando [Markdown](https://www.markdownguide.org/), para los snipets de código utilizad los bloques de código que facilita `Markdown`
