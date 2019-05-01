@@ -33,6 +33,7 @@ Todo artículo debe venir con una cabecera que cumpla la siguiente plantilla:
 +++
     author = "{Nombre que quieras que aparezca en el artículo}"
     username = "{usuario de twitter}"
+    github = "{si tienes perfil de github y te interesa compartirlo}"
     title = "{Título del artículo}"    
     tags = [
         "{array de tags que creáis que es útil para vuestro artículo}"
