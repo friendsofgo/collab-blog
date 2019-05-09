@@ -116,8 +116,8 @@ Una de las cosas que nos encontramos es la nueva *interface Wrapper*, esta deben
 
 ```Go
 type Wrapper interface {
-        // *Unwrap* devuelve el siguiente error, en la cadena de errores
-        // Si el error no esiste, Unwrap devolverá *nil*.
+        // Unwrap devuelve el siguiente error, en la cadena de errores.
+        // Si el error no esiste, Unwrap devolverá nil.
         Unwrap() error
 }
 ```
@@ -125,21 +125,21 @@ type Wrapper interface {
 Vamos a hablar de la función *IS* que nos permite seguir la cadena de errores llamando a la función Unwrap y busca si alguno coincide con el valor que se le pasa. Será usada para controlar los errores sentinelas (sentinel errores), que es un tipo de error con valor único. Cualquier error puede implementar el método *Is* para sobrescribir el comportamiento por defecto.
 
 ```Go
-// El método *Is* informa cuando cualquier error de la cadena de errores es igual al target.
+// El método Is informa cuando cualquier error de la cadena de errores es igual al target.
 //
 // Un error coincide con el el target, si es igual al target o
-// si implementa el método *Is(error) bool* de tal forma que *Is(target)* devuelve *true*.
+// si implementa el método Is(error) bool de tal forma que Is(target) devuelve true.
 func Is(err, target error) bool
 ```
 
 La función *As*, que viene de *assert*, busca en la cadena de errores, un error cuyo tipo coincida con el valor que se le pasa. Cualquier error puede implementar el método *As* para sobrescribir el comportamiento por defecto.
 
 ```Go
-// El método *As* encuentra el primer error en la cadena de errores que coincide con el tipo
-// al que apunte el target, y si es así, este establece el target a su valor y devuelve *true*
+// El método As encuentra el primer error en la cadena de errores que coincide con el tipo
+// al que apunte el target, y si es así, este establece el target a su valor y devuelve true.
 //
 // Un error coincide con el el target, si este es asignable al target o
-// si implementa el método *As(interface{}) bool* de tal forma que *As(target)* devuelve *true*.
+// si implementa el método As(interface{}) bool de tal forma que As(target) devuelve true.
 func As(err error, target interface{}) bool
 ```
 
