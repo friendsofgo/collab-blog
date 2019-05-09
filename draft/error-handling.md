@@ -143,6 +143,6 @@ La función *As*, que viene de *assert*, busca en la cadena de errores, un error
 func As(err error, target interface{}) bool
 ```
 
-Estas creo que son las principales cosas a destacar en la propuesta de Go para los errores en su nueva versión, hay algunas más para formatear mejor los errores al imprimirlos, etc. Todas estas nuevas funcionalidades se pueden probar gracias [al paquete xerrors](https://github.com/golang/xerrors/) que la gente de Go ha sacado para que vayamos probando hasta que se hagan realidad estas funciones. Así que si te has quedado con ganas de más, puedes leer la propuesta y testearlo más a fondo.
+Estas creo que son las principales cosas a destacar en la propuesta de Go para los errores en su nueva versión, hay algunas más para formatear mejor los errores al imprimirlos, etc. Todas estas nuevas funcionalidades se pueden probar gracias [al paquete xerrors](https://godoc.org/golang.org/x/xerrors/) que la gente de Go ha sacado para que vayamos probando hasta que se hagan realidad estas funciones. Así que si te has quedado con ganas de más, puedes leer la propuesta y testearlo más a fondo.
 
 Como siempre, estaremos encantados de recibir vuestro feedback en los comentarios del blog o vía Twitter.
