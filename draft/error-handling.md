@@ -122,7 +122,7 @@ type Wrapper interface {
 }
 ```
 
-Vamos a hablar de la función *IS* que nos permite seguir la cadena de errores llamando a la función Unwrap y busca si alguno coincide con el valor que se le pasa. Será usada para controlar los errores sentinelas (sentinel errores), que es un tipo de error con valor único. Cualquier error puede implementar el método *Is* para sobrescribir el comportamiento por defecto.
+Vamos a hablar de la función *IS* que nos permite seguir la cadena de errores llamando a la función Unwrap y busca si alguno coincide con el valor que se le pasa. Será usada para controlar los errores sentinelas (sentinel errors), que es un tipo de error con valor único. Cualquier error puede implementar el método *Is* para sobrescribir el comportamiento por defecto.
 
 ```Go
 // El método Is informa cuando cualquier error de la cadena de errores es igual al target.
