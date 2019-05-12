@@ -27,6 +27,38 @@ func main() {
 }
 ```
 
+Por otro lado, tenemos la función *defer*, la cual sirve para enviar la instrucción que le pongamos al final del programa. Es muy usada para tareas de limpiezas como por ejemplo cerrar conexiones a la base de datos.
+
+```Go
+func main() {
+    defer fmt.Println("Something is burning")
+    fmt.Println("Dracarys")
+}
+```
+
+Esto nos daría:  
+*Dracarys  
+Something is burning*.
+
+Ahora que sabemos como se comportan las funciones *defer* y *panic*, vamos a ver como funciona *recover*. La función *defer* unida con la función *recover* se suele usar para capturar un *panic*. Aqui abajo vemos un ejemplo.
+
+```Go
+func main() {
+    defer func() {
+        r := recover()
+        fmt.Println("recovered:", r)
+        fmt.Println("John is alive")
+    }()
+    panic("John Snow died")
+}
+```
+
+Esto nos daría:  
+*recovered: John Snow died*.  
+*John is alive*.
+
+No deberíamos de usar la función *panic* muy a menudo en nuestros programas y mucho menos si estamos elaborando alguna librería que tenga que ser consumida por un tercero. Sin embargo, con lo aprendido hasta ahora, si nos encontramos con algún *panic* en una de las librerías que estemos usando, podriamos capturarlo.
+
 ## Control de errores
 
 En Go las funciones pueden devolver más de un valor. Normalmente se utilizan para devolver el valor esperado y un error. En este caso hemos creado una función que traduce cualquier palabra que pasemos en español a alto valirio. Para ello, recibe una cadena de texto a traducir, devuelve una nueva cadena de texto ya traducida y un *error* en el caso de que lo hubiese.
